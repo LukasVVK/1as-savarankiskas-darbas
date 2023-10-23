@@ -1,7 +1,4 @@
 #include "Header1.h"
-#include <iostream>
-#include <numeric>
-#include <iomanip>
 
 int minimum(int a, int b) {
     return a < b ? a : b;
