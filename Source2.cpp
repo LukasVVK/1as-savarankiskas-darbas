@@ -1,24 +1,34 @@
-﻿#include "Header1.h"
+#include "Header1.h"
 
 int main() {
-    vector<Student> Grupe;
-    int studentuSkaicius;
+    std::vector<Student> Grupe;
+    std::string failoPavadinimas;
 
-    cout << "Kiek studentu norite ivesti? ";
-    cin >> studentuSkaicius;
+    std::cout << "Iveskite failo pavadinima: ";
+    std::getline(std::cin, failoPavadinimas);
 
-    for (int i = 0; i < studentuSkaicius; i++) {
-        Student Laikinas;
-        cin >> Laikinas;
-        Grupe.push_back(Laikinas);
+    try {
+        skaitytiIsFailo(failoPavadinimas, Grupe);
+    }
+    catch (std::exception& e) {
+        std::cerr << "Klaida nuskaitant duomenis is failo: " << e.what() << std::endl;
+        return 1;
     }
 
-    cout << std::setw(15) << std::left << "Pavarde" << " " << std::setw(15) << "Vardas" << " " << "Galutinis (Vid.) / Galutinis (Med.)" << endl;
-    cout << "-----------------------------------------------------------------" << endl;
+    std::sort(Grupe.begin(), Grupe.end());
 
-    for (const auto& duom : Grupe) {
-        cout << duom;
+    std::cout << std::setw(15) << std::left << "Pavardė" << " "
+        << std::setw(15) << "Vardas" << " "
+        << std::setw(20) << "Galutinis (Vid.)" << std::endl;
+    std::cout << "------------------------------------------------------------------" << std::endl;
+
+    for (const auto& studentas : Grupe) {
+        std::cout << studentas;
     }
 
     return 0;
+}
+
+int minimum(int a, int b) {
+    return a < b ? a : b;
 }
