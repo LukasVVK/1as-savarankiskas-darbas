@@ -1,5 +1,7 @@
 # 1as-savarankiskas-darbas
 
+##Vector
+
 Iveskite failo pavadinima: C:\...\1000_studentu.txt
 - Laikas, praleistas skaitymui is failo: 49 ms
 - Laikas, praleistas rikiavimui: 7 ms
@@ -23,3 +25,29 @@ Iveskite failo pavadinima: C:\...\1000000_studentu.txt
 - Laikas, praleistas rikiavimui: 59522 ms
 - Laikas, praleistas grupiu atskyrimui: 17234 ms
 - Laikas, praleistas rasant i failus: 28282 ms
+
+##list
+
+Iveskite failo pavadinima: C:\...\1000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 36 ms
+- Laikas, praleistas rikiavimui: 0 ms
+- Laikas, praleistas grupiu atskyrimui: 1 ms
+- Laikas, praleistas rasant i failus: 11 ms
+
+Iveskite failo pavadinima: C:\...\10000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 292 ms
+- Laikas, praleistas rikiavimui: 4 ms
+- Laikas, praleistas grupiu atskyrimui: 14 ms
+- Laikas, praleistas rasant i failus: 101 ms
+
+Iveskite failo pavadinima: C:\...\100000_studentu.txt
+Laikas, praleistas skaitymui is failo: 2774 ms
+Laikas, praleistas rikiavimui: 59 ms
+Laikas, praleistas grupiu atskyrimui: 169 ms
+Laikas, praleistas rasant i failus: 834 ms
+
+Iveskite failo pavadinima: C:\...\1000000_studentu.txt
+Laikas, praleistas skaitymui is failo: 27297 ms
+Laikas, praleistas rikiavimui: 659 ms
+Laikas, praleistas grupiu atskyrimui: 2369 ms
+Laikas, praleistas rasant i failus: 8760 ms
