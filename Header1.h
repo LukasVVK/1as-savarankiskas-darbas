@@ -9,12 +9,27 @@
 #include <numeric>
 #include <iomanip>
 #include <stdexcept>
+#include <chrono>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+
+class Timer {
+public:
+    Timer() : start_(std::chrono::high_resolution_clock::now()) {}
+    void reset() {
+        start_ = std::chrono::high_resolution_clock::now();
+    }
+    double elapsed() const {
+        return std::chrono::duration_cast<std::chrono::milliseconds>(
+            std::chrono::high_resolution_clock::now() - start_).count();
+    }
+private:
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_;
+};
 
 class Student {
     string Name, Surname;
@@ -33,6 +48,7 @@ public:
     float Med();
     void Result(char pas);
     void printas() const;
+    float getRez() const { return Rez; }  // Getter for Rez
 
     friend std::istream& operator>>(std::istream& in, Student& S);
     friend std::ostream& operator<<(std::ostream& out, const Student& S);
