@@ -1,8 +1,8 @@
 # 1as-savarankiskas-darbas
 
 Iveskite failo pavadinima: C:\Users\petre\OneDrive\Desktop\generate\1000_studentu.txt
--Laikas, praleistas skaitymui is failo: 33 ms
--Laikas, praleistas rikiavimui: 17 ms
+-Laikas, praleistas skaitymui is failo: 33 ms-
+-Laikas, praleistas rikiavimui: 17 ms-
 -Laikas, praleistas grupiu atskyrimui: 10 ms
 -Laikas, praleistas rasant i failus: 25 ms
 
