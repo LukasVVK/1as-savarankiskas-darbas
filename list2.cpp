@@ -1,9 +1,8 @@
 #include "list.h"
-#include <iterator>
 
 int main() {
     Timer timer;
-    std::list<Student> Grupe;
+    std::list<Student> Grupe;  // Naudojamas std::list vietoj std::vector
     std::string failoPavadinimas;
 
     cout << "Iveskite failo pavadinima: ";
@@ -20,15 +19,20 @@ int main() {
     }
 
     timer.reset();
-    Grupe.sort();
+    Grupe.sort();  // std::list turi savo sort() metodą
     cout << "Laikas, praleistas rikiavimui: " << timer.elapsed() << " ms" << endl;
 
     timer.reset();
-    std::list<Student> vargsiukai, kietiakiai;
-    for (const auto& studentas : Grupe) {
-        if (studentas.getRez() < 5.0) vargsiukai.push_back(studentas);
-        else kietiakiai.push_back(studentas);
+    std::list<Student> vargsiukai;
+    for (auto it = Grupe.begin(); it != Grupe.end(); ) {
+        if (it->getRez() < 5.0) {
+            vargsiukai.push_back(std::move(*it));
+            it = Grupe.erase(it);
+        } else {
+            ++it;
+        }
     }
+
     cout << "Laikas, praleistas grupiu atskyrimui: " << timer.elapsed() << " ms" << endl;
 
     timer.reset();
@@ -38,8 +42,10 @@ int main() {
         return 1;
     }
     std::cout << "Laikas, praleistas failu kurimui: " << timer.elapsed() << " ms" << std::endl;
+
     for (const auto& v : vargsiukai) vargsiukaiFile << v;
-    for (const auto& k : kietiakiai) kietiakiaiFile << k;
+    for (const auto& k : Grupe) kietiakiaiFile << k;  // Dabar Grupe yra tik kietiakiai
+
     vargsiukaiFile.close();
     kietiakiaiFile.close();
     cout << "Laikas, praleistas rasant i failus: " << timer.elapsed() << " ms" << endl;
