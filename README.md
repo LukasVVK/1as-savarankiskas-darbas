@@ -1,6 +1,6 @@
 # 1as-savarankiskas-darbas
 
-##Vector
+## naudojant vector
 
 Iveskite failo pavadinima: C:\...\1000_studentu.txt
 - Laikas, praleistas skaitymui is failo: 49 ms
@@ -26,7 +26,7 @@ Iveskite failo pavadinima: C:\...\1000000_studentu.txt
 - Laikas, praleistas grupiu atskyrimui: 17234 ms
 - Laikas, praleistas rasant i failus: 28282 ms
 
-##list
+## naudojant list
 
 Iveskite failo pavadinima: C:\...\1000_studentu.txt
 - Laikas, praleistas skaitymui is failo: 36 ms
