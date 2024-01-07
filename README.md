@@ -132,3 +132,29 @@ Iveskite failo pavadinima: C:\...\1000000_studentu.txt
 - Laikas, praleistas grupiu atskyrimui: 1374 ms
 - Laikas, praleistas rasant i failus: 9158 ms
 
+## naudojant deque:
+
+Iveskite failo pavadinima: C:\...\1000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 35 ms
+- Laikas, praleistas rikiavimui: 9 ms
+- Laikas, praleistas grupiu atskyrimui: 2 ms
+- Laikas, praleistas rasant i failus: 16 ms
+
+Iveskite failo pavadinima: C:\...\10000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 270 ms
+- Laikas, praleistas rikiavimui: 126 ms
+- Laikas, praleistas grupiu atskyrimui: 19 ms
+- Laikas, praleistas rasant i failus: 89 ms
+
+Iveskite failo pavadinima: C:\...\100000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 2748 ms
+- Laikas, praleistas rikiavimui: 1569 ms
+- Laikas, praleistas grupiu atskyrimui: 212 ms
+- Laikas, praleistas rasant i failus: 833 ms
+
+Iveskite failo pavadinima: C:\...\1000000_studentu.txt
+- Laikas, praleistas skaitymui is failo: 28957 ms
+- Laikas, praleistas rikiavimui: 20170 ms
+- Laikas, praleistas grupiu atskyrimui: 2441 ms
+- Laikas, praleistas rasant i failus: 9266 ms
+
