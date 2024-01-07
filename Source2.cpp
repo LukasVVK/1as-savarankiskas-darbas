@@ -23,9 +23,13 @@ int main() {
     cout << "Laikas, praleistas rikiavimui: " << timer.elapsed() << " ms" << endl;
 
     timer.reset();
-    std::vector<Student> vargsiukai, kietiakiai;
-    std::partition_copy(Grupe.begin(), Grupe.end(), std::back_inserter(vargsiukai), std::back_inserter(kietiakiai),
-        [](const Student& s) { return s.getRez() < 5.0; });
+    std::vector<Student> vargsiukai;
+    auto it = std::stable_partition(Grupe.begin(), Grupe.end(),
+        [](const Student& s) { return s.getRez() >= 5.0; });
+
+    vargsiukai.insert(vargsiukai.end(), std::make_move_iterator(it), std::make_move_iterator(Grupe.end()));
+    Grupe.erase(it, Grupe.end());
+
     cout << "Laikas, praleistas grupiu atskyrimui: " << timer.elapsed() << " ms" << endl;
 
     timer.reset();
@@ -35,8 +39,10 @@ int main() {
         return 1;
     }
     std::cout << "Laikas, praleistas failu kurimui: " << timer.elapsed() << " ms" << std::endl;
+
     for (const auto& v : vargsiukai) vargsiukaiFile << v;
-    for (const auto& k : kietiakiai) kietiakiaiFile << k;
+    for (const auto& k : Grupe) kietiakiaiFile << k; // dabar Grupe yra tik kietiakiai
+
     vargsiukaiFile.close();
     kietiakiaiFile.close();
     cout << "Laikas, praleistas rasant i failus: " << timer.elapsed() << " ms" << endl;
