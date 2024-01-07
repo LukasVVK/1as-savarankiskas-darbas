@@ -1,3 +1,35 @@
+# 1 strategija (Dvigubas Konteinerių Naudojimas)
+
+## `std::vector`:
+- Didėjant duomenų kiekiui, skaitymo, rikiavimo, grupių atskyrimo ir įrašymo į failus laikas ženkliai auga.
+- Grupių atskyrimo laikas yra santykinai mažesnis už skaitymo ir rikiavimo laikus, bet auga su duomenų kiekiu.
+
+## `std::list`:
+- Skaitymo laikas panašus į `std::vector`, tačiau rikiavimo laikas yra ženkliai trumpesnis.
+- Grupių atskyrimo laikas yra minimalus, o įrašymo į failus laikas panašus į `std::vector`.
+
+## `std::deque`:
+- Skaitymo laikas yra panašus į `std::list` ir `std::vector`.
+- Rikiavimo laikas ilgesnis nei `std::list`, bet panašus į `std::vector`.
+- Grupių atskyrimo laikas yra trumpesnis nei `std::vector`, bet ilgesnis nei `std::list`.
+
+# 2 strategija (Vieno Konteinerio Naudojimas ir Elementų Trynimas)
+
+## `std::vector`:
+- Skaitymo laikas yra panašus į 1 strategiją.
+- Rikiavimo laikas taip pat panašus į 1 strategiją.
+- Grupių atskyrimo laikas ženkliai trumpesnis nei 1 strategijoje, ypač didesniuose duomenų rinkiniuose.
+
+## `std::list`:
+- Skaitymo, rikiavimo ir grupių atskyrimo laikai yra panašūs į 1 strategiją, tačiau grupių atskyrimo laikas šiek tiek trumpesnis.
+- Įrašymo į failus laikas panašus į 1 strategiją.
+
+# Bendros Išvados
+
+- **Atminties Efektyvumas**: 2 strategija yra efektyvesnė atminties naudojimo požiūriu, nes nekuria studentų kopijų.
+- **Našumas**: `std::list` pasirodo esąs labai efektyvus rikiavimo ir grupių atskyrimo operacijose, tai yra dėl jo privalumų trinant elementus.
+
+
 # Laiko palyginimas naudojant 1 strategija.
 
 ## naudojant vector:
@@ -157,4 +189,3 @@ Iveskite failo pavadinima: C:\...\1000000_studentu.txt
 - Laikas, praleistas rikiavimui: 20170 ms
 - Laikas, praleistas grupiu atskyrimui: 2441 ms
 - Laikas, praleistas rasant i failus: 9266 ms
-
